@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\ohmcss\Desktop\BattleshipClone\build\CMakeFiles\66748d4b7894c90e671ffa25d5173360\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1CB36C1D-6FB9-3B9D-884A-F60B394F1DAF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

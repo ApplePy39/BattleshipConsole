@@ -1,0 +1,9 @@
+C:/Users/ohmcss/Desktop/BattleshipClone/build/CMakeFiles/Experimental.dir
+C:/Users/ohmcss/Desktop/BattleshipClone/build/CMakeFiles/Nightly.dir
+C:/Users/ohmcss/Desktop/BattleshipClone/build/CMakeFiles/Continuous.dir
+C:/Users/ohmcss/Desktop/BattleshipClone/build/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/ohmcss/Desktop/BattleshipClone/build/CMakeFiles/BattleshipClone.dir
+C:/Users/ohmcss/Desktop/BattleshipClone/build/CMakeFiles/PACKAGE.dir
+C:/Users/ohmcss/Desktop/BattleshipClone/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/ohmcss/Desktop/BattleshipClone/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/ohmcss/Desktop/BattleshipClone/build/CMakeFiles/ZERO_CHECK.dir

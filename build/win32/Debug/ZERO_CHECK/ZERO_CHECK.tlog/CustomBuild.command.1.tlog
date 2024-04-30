@@ -1,0 +1,10 @@
+^C:\USERS\OHMCSS\DESKTOP\BATTLESHIPCLONE\BUILD\CMAKEFILES\66748D4B7894C90E671FFA25D5173360\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/ohmcss/Desktop/BattleshipClone -BC:/Users/ohmcss/Desktop/BattleshipClone/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/ohmcss/Desktop/BattleshipClone/build/BattleshipClone.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
