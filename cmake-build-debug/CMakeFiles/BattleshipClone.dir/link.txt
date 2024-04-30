@@ -1,1 +1,3 @@
-/usr/bin/c++ -g -rdynamic CMakeFiles/BattleshipClone.dir/source/main.cpp.o CMakeFiles/BattleshipClone.dir/source/Render.cpp.o CMakeFiles/BattleshipClone.dir/source/Turn.cpp.o CMakeFiles/BattleshipClone.dir/source/Pieces.cpp.o -o BattleshipClone 
+"C:\Users\ohmcss\AppData\Local\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\BattleshipClone.dir/objects.a
+C:\Users\ohmcss\AppData\Local\JETBRA~1\CLION2~1.4\bin\mingw\bin\ar.exe qc CMakeFiles\BattleshipClone.dir/objects.a @CMakeFiles\BattleshipClone.dir\objects1.rsp
+C:\Users\ohmcss\AppData\Local\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\BattleshipClone.dir/objects.a -Wl,--no-whole-archive -o BattleshipClone.exe -Wl,--out-implib,libBattleshipClone.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\BattleshipClone.dir\linkLibs.rsp

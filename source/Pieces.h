@@ -4,26 +4,22 @@
 
 #pragma once
 #include <vector>
+#include "Coordinates.h"
 
 class Pieces {
 public:
-
-    // sizeOfShip will refer to how many grid spaces the ship spans
-    // arrangement will determine whether the ship is vertical or horizontal
-    // locations will hold the points on which the ship is located, it is located in
-    // a vector which contains a list of these points
-    Pieces(short sizeOfShip, char arrangement, std::vector<char[1][1]> locations)
-    {
-        _sizeOfShip = sizeOfShip;
-        _arrangement = arrangement;
-        _locations = locations;
-    }
-
+    Pieces() = default;
     ~Pieces() = default;
+    Pieces(char displayVal, bool isShip);
+    Pieces(char displayVal, bool isShip, short sizeOfShip, char arrangement, std::vector<Coordinates> locations);
+    char getCharacter() const;
+    void setCharacter(char character);
 
 private:
+    bool _isShip;
+    char _displayValue;
     short _sizeOfShip;
     char _arrangement;
-    std::vector<char[1][1]> _locations;
+    std::vector<Coordinates> _locations {};
 };
 

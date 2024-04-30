@@ -8,10 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/applepy/CppDev/BattleshipConsole/source/Pieces.cpp" "CMakeFiles/BattleshipClone.dir/source/Pieces.cpp.o" "gcc" "CMakeFiles/BattleshipClone.dir/source/Pieces.cpp.o.d"
-  "/home/applepy/CppDev/BattleshipConsole/source/Render.cpp" "CMakeFiles/BattleshipClone.dir/source/Render.cpp.o" "gcc" "CMakeFiles/BattleshipClone.dir/source/Render.cpp.o.d"
-  "/home/applepy/CppDev/BattleshipConsole/source/Turn.cpp" "CMakeFiles/BattleshipClone.dir/source/Turn.cpp.o" "gcc" "CMakeFiles/BattleshipClone.dir/source/Turn.cpp.o.d"
-  "/home/applepy/CppDev/BattleshipConsole/source/main.cpp" "CMakeFiles/BattleshipClone.dir/source/main.cpp.o" "gcc" "CMakeFiles/BattleshipClone.dir/source/main.cpp.o.d"
+  "C:/Users/ohmcss/Desktop/BattleshipConsole/source/Coordinates.cpp" "CMakeFiles/BattleshipClone.dir/source/Coordinates.cpp.obj" "gcc" "CMakeFiles/BattleshipClone.dir/source/Coordinates.cpp.obj.d"
+  "C:/Users/ohmcss/Desktop/BattleshipConsole/source/Pieces.cpp" "CMakeFiles/BattleshipClone.dir/source/Pieces.cpp.obj" "gcc" "CMakeFiles/BattleshipClone.dir/source/Pieces.cpp.obj.d"
+  "C:/Users/ohmcss/Desktop/BattleshipConsole/source/Render.cpp" "CMakeFiles/BattleshipClone.dir/source/Render.cpp.obj" "gcc" "CMakeFiles/BattleshipClone.dir/source/Render.cpp.obj.d"
+  "C:/Users/ohmcss/Desktop/BattleshipConsole/source/Turn.cpp" "CMakeFiles/BattleshipClone.dir/source/Turn.cpp.obj" "gcc" "CMakeFiles/BattleshipClone.dir/source/Turn.cpp.obj.d"
+  "C:/Users/ohmcss/Desktop/BattleshipConsole/source/main.cpp" "CMakeFiles/BattleshipClone.dir/source/main.cpp.obj" "gcc" "CMakeFiles/BattleshipClone.dir/source/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

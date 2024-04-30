@@ -4,6 +4,7 @@
 
 #pragma once
 #include "Globals.h"
+#include "Pieces.h"
 
 class Render {
 public:
@@ -11,8 +12,11 @@ public:
     ~Render() = default;
 
     void StartGame();
+    void renderBoard() const;
+    void returnBoardWidth() const;
+    void returnBoardHeight() const;
 private:
-    char board[11][11]{};
+    Pieces board[11][11]{};
 };
 
 

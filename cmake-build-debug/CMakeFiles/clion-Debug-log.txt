@@ -1,4 +1,4 @@
-/app/extra/clion/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/applepy/CppDev/BattleshipConsole -B /home/applepy/CppDev/BattleshipConsole/cmake-build-debug
+"C:\Users\ohmcss\AppData\Local\JetBrains\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\ohmcss\Desktop\BattleshipConsole -B C:\Users\ohmcss\Desktop\BattleshipConsole\cmake-build-debug
 CMake Deprecation Warning:
   Support for "Extra Generators" like
 
@@ -16,6 +16,6 @@ CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
   CMake that the project does not need compatibility with older versions.
 
 
--- Configuring done (0.0s)
--- Generating done (0.0s)
--- Build files have been written to: /home/applepy/CppDev/BattleshipConsole/cmake-build-debug
+-- Configuring done (0.3s)
+-- Generating done (0.4s)
+-- Build files have been written to: C:/Users/ohmcss/Desktop/BattleshipConsole/cmake-build-debug

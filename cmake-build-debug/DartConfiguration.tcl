@@ -4,17 +4,17 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/applepy/CppDev/BattleshipConsole
-BuildDirectory: /home/applepy/CppDev/BattleshipConsole/cmake-build-debug
+SourceDirectory: C:/Users/ohmcss/Desktop/BattleshipConsole
+BuildDirectory: C:/Users/ohmcss/Desktop/BattleshipConsole/cmake-build-debug
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: thekraken
+Site: SRPIN2B25WS
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Linux-c++
+BuildName: Win32-mingw32-make
 
 # Subprojects
 LabelsForSubprojects: 
@@ -27,8 +27,8 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/app/extra/clion/bin/cmake/linux/x64/bin/cmake" "/home/applepy/CppDev/BattleshipConsole"
-MakeCommand: /app/extra/clion/bin/cmake/linux/x64/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
+ConfigureCommand: "C:/Users/ohmcss/AppData/Local/JetBrains/CLion 2023.3.4/bin/cmake/win/x64/bin/cmake.exe" "C:/Users/ohmcss/Desktop/BattleshipConsole"
+MakeCommand: C:/Users/ohmcss/AppData/Local/JetBrains/CLion\ 2023.3.4/bin/cmake/win/x64/bin/cmake.exe --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -45,7 +45,7 @@ SVNOptions:
 SVNUpdateOptions: 
 
 # Git options
-GITCommand: /usr/bin/git
+GITCommand: C:/Users/ohmcss/AppData/Local/Programs/Git/cmd/git.exe
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
@@ -58,13 +58,13 @@ P4UpdateOptions:
 P4UpdateCustom: 
 
 # Generic update command
-UpdateCommand: /usr/bin/git
+UpdateCommand: C:/Users/ohmcss/AppData/Local/Programs/Git/cmd/git.exe
 UpdateOptions: 
 UpdateType: git
 
 # Compiler info
-Compiler: /usr/bin/c++
-CompilerVersion: 13.2.0
+Compiler: C:/Users/ohmcss/AppData/Local/JetBrains/CLion 2023.3.4/bin/mingw/bin/g++.exe
+CompilerVersion: 13.1.0
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 
@@ -76,12 +76,12 @@ CudaSanitizerCommand:
 CudaSanitizerCommandOptions: 
 MemoryCheckType: 
 MemoryCheckSanitizerOptions: 
-MemoryCheckCommand: /usr/bin/valgrind
+MemoryCheckCommand: MEMORYCHECK_COMMAND-NOTFOUND
 MemoryCheckCommandOptions: 
 MemoryCheckSuppressionFile: 
 
 # Coverage
-CoverageCommand: /usr/bin/gcov
+CoverageCommand: C:/Users/ohmcss/AppData/Local/JetBrains/CLion 2023.3.4/bin/mingw/bin/gcov.exe
 CoverageExtraFlags: -l
 
 # Testing options

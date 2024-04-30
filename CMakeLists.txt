@@ -12,7 +12,9 @@ add_executable(BattleshipClone source/main.cpp
         source/Turn.cpp
         source/Turn.h
         source/Pieces.cpp
-        source/Pieces.h)
+        source/Pieces.h
+        source/Coordinates.cpp
+        source/Coordinates.h)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

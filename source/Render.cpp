@@ -10,8 +10,15 @@ void Render::StartGame()
     {
         for (int j = 0; j < 11; j++)
         {
-            board[i][j] = '~';
-            std::cout << "X: " << i << " Y: " << j << std::endl;
+            board[i][j] = { '~', false };
         }
+    }
+}
+
+void Render::renderBoard()
+{
+    for (int i = 0; i < ; i++)
+    {
+
     }
 }
