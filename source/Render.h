@@ -5,18 +5,25 @@
 #pragma once
 #include "Globals.h"
 #include "Pieces.h"
+#include "Turn.h"
 
 class Render {
 public:
+    Render(short boardWidth, short boardHeight, Pieces board[11][11]);
     Render() = default;
     ~Render() = default;
 
     void StartGame();
-    void renderBoard() const;
-    void returnBoardWidth() const;
-    void returnBoardHeight() const;
+    void renderPlayerOneBoard();
+    void renderPlayerTwoBoard();
+    short returnBoardWidth() const;
+    short returnBoardHeight() const;
+
 private:
-    Pieces board[11][11]{};
+    const short _boardHeight { 11 };
+    const short _boardWidth { 11 };
+    Pieces playerOneBoard[11][11]{};
+    Pieces playerTwoBoard[11][11]{};
 };
 
 

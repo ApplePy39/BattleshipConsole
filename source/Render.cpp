@@ -4,21 +4,61 @@
 
 #include "Render.h"
 
+Render::Render(short boardWidth, short boardHeight, Pieces board[11][11])
+{
+    boardWidth = 11;
+    boardHeight = 11;
+    playerOneBoard[11][11] = board[boardWidth][boardHeight];
+    playerTwoBoard[11][11] = board[boardWidth][boardHeight];
+}
+
 void Render::StartGame()
 {
-    for (int i = 0; i < 11; i++)
+    for (int i = 0; i < 10; i++)
     {
-        for (int j = 0; j < 11; j++)
+        for (int j = 0; j < 10; j++)
         {
-            board[i][j] = { '~', false };
+            playerOneBoard[i][j] = { '#', false };
+            playerTwoBoard[i][j] = { '#', false };
         }
+    }
+
+    // begin game function here (Turn.h)
+
+}
+
+void Render::renderPlayerOneBoard()
+{
+    for (int i = 0; i < _boardWidth; i++)
+    {
+        for (int j = 0; j < _boardHeight; j++)
+        {
+            std::cout << playerOneBoard[i][j].getCharacter();
+        }
+
+        std::cout << std::endl;
     }
 }
 
-void Render::renderBoard()
+void Render::renderPlayerTwoBoard()
 {
-    for (int i = 0; i < ; i++)
+    for (int i = 0; i < _boardWidth; i++)
     {
+        for (int j = 0; j < _boardHeight; j++)
+        {
+            std::cout << playerTwoBoard[i][j].getCharacter();
+        }
 
+        std::cout << std::endl;
     }
+}
+
+short Render::returnBoardHeight() const
+{
+    return _boardHeight;
+}
+
+short Render::returnBoardWidth() const
+{
+    return _boardWidth;
 }

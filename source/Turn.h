@@ -3,18 +3,21 @@
 //
 
 #pragma once
+#include "Globals.h"
 
 class Turn {
 public:
     Turn() = default;
     ~Turn() = default;
 
-    // endTurn() will end the current players turn and change the currentPlayerTurn counter
-    // to either 1 or 0, the opposite of the current, it will call a redraw of the other players board
-    // so the current player can guess where to hit.
     void endTurn();
+    void beginGame();
+    void playerOneTurn();
+    void playerTwoTurn();
 
 private:
     short currentPlayerTurn = 0;
+    std::string playerOneName { " " };
+    std::string playerTwoName { " " };
 };
 
