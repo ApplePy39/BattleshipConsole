@@ -2,7 +2,9 @@
 // Created by Anton Frank on 4/29/2024.
 //
 
+#include <fstream>
 #include "Render.h"
+#include "Turn.h"
 
 Render::Render(short boardWidth, short boardHeight, Pieces board[11][11])
 {
@@ -23,8 +25,7 @@ void Render::StartGame()
         }
     }
 
-    // begin game function here (Turn.h)
-
+    TurnFunctionality::beginGame();
 }
 
 void Render::renderPlayerOneBoard()
@@ -61,4 +62,28 @@ short Render::returnBoardHeight() const
 short Render::returnBoardWidth() const
 {
     return _boardWidth;
+}
+
+namespace readPresets
+{
+    void getPresetOne()
+    {
+        std::fstream presetOneFile;
+
+        presetOneFile.open("source/saves/presetOne.txt", std::ios::in);
+
+        if (presetOneFile.is_open())
+        {
+            std::string currentLine;
+
+            while (std::getline(presetOneFile, currentLine))
+            {
+                std::cout << currentLine << std::endl;
+
+            }
+
+            std::cin.get();
+            presetOneFile.close();
+        }
+    }
 }

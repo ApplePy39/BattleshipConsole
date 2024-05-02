@@ -7,6 +7,11 @@
 #include "Pieces.h"
 #include "Turn.h"
 
+namespace readPresets
+{
+    extern void getPresetOne();
+}
+
 class Render {
 public:
     Render(short boardWidth, short boardHeight, Pieces board[11][11]);

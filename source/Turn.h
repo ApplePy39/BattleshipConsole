@@ -4,20 +4,17 @@
 
 #pragma once
 #include "Globals.h"
+#include "Pieces.h"
 
-class Turn {
-public:
-    Turn() = default;
-    ~Turn() = default;
+namespace TurnFunctionality
+{
+    extern void endTurn();
+    extern void beginGame();
+    extern void chooseShipLocations();
+    extern void playerOneTurn();
+    extern void playerTwoTurn();
 
-    void endTurn();
-    void beginGame();
-    void playerOneTurn();
-    void playerTwoTurn();
-
-private:
-    short currentPlayerTurn = 0;
-    std::string playerOneName { " " };
-    std::string playerTwoName { " " };
-};
-
+    extern short currentPlayerTurn;
+    extern std::string playerOneName;
+    extern std::string playerTwoName;
+}

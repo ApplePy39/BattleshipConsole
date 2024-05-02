@@ -148,4 +148,7 @@ CMakeFiles/BattleshipClone.dir/source/Turn.cpp.obj: \
  C:/Users/ohmcss/AppData/Local/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.tcc \
  C:/Users/ohmcss/AppData/Local/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
  C:/Users/ohmcss/AppData/Local/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
- C:/Users/ohmcss/AppData/Local/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc
+ C:/Users/ohmcss/AppData/Local/JetBrains/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
+ C:\Users\ohmcss\Desktop\BattleshipConsole\source\Pieces.h \
+ C:\Users\ohmcss\Desktop\BattleshipConsole\source\Coordinates.h \
+ C:\Users\ohmcss\Desktop\BattleshipConsole\source\Render.h
