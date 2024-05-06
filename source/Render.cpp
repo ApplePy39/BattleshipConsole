@@ -69,9 +69,7 @@ namespace readPresets
     void getPresetOne()
     {
         std::fstream presetOneFile;
-
-        presetOneFile.open("saves/presetOne.txt", std::fstream::in);
-
+        presetOneFile.open("../source/saves/presetOne.txt", std::ios::in);
       /*  presetOneFile.open("/saves/presetOne.txt", std::ios::in);
         presetOneFile.open("BattleshipConsole/source/saves/presetOne.txt", std::ios::in);
 */
