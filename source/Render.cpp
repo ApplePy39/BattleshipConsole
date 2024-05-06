@@ -70,20 +70,28 @@ namespace readPresets
     {
         std::fstream presetOneFile;
 
-        presetOneFile.open("source/saves/presetOne.txt", std::ios::in);
+        presetOneFile.open("saves/presetOne.txt", std::fstream::in);
 
+      /*  presetOneFile.open("/saves/presetOne.txt", std::ios::in);
+        presetOneFile.open("BattleshipConsole/source/saves/presetOne.txt", std::ios::in);
+*/
         if (presetOneFile.is_open())
         {
             std::string currentLine;
-
+            std::cout << "here" << std::endl;
             while (std::getline(presetOneFile, currentLine))
             {
                 std::cout << currentLine << std::endl;
 
             }
 
-            std::cin.get();
             presetOneFile.close();
+            std::cin.get();
+        }
+
+        else
+        {
+            std::cout << "Unable to open file: (presetOne.txt)" << std::endl;
         }
     }
 }

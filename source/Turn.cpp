@@ -43,7 +43,7 @@ namespace TurnFunctionality
 
         std::cin >> answer;
 
-        if (tolower(answer) == 'y')
+        if (answer == 'y')
         {
             chooseShipLocations();
         }
@@ -64,7 +64,7 @@ namespace TurnFunctionality
         std::cout << playerOneName << ", which preset would you like for your ships? (1-3)" << std::endl;
         std::cin >> playerOneSelectedPreset;
 
-        if (playerOneSelectedPreset = 1)
+        if (playerOneSelectedPreset == 1)
         {
             readPresets::getPresetOne();
         }
