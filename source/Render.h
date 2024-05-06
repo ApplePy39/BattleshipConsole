@@ -9,7 +9,9 @@
 
 namespace readPresets
 {
-    extern void getPresetOne();
+    extern void getPresetOne(Pieces board[11][11]);
+    extern void getPresetTwo(Pieces board[11][11]);
+    extern void getPresetThree(Pieces board[11][11]);
 }
 
 class Render {
@@ -23,12 +25,12 @@ public:
     void renderPlayerTwoBoard();
     short returnBoardWidth() const;
     short returnBoardHeight() const;
+    Pieces playerOneBoard[11][11]{};
+    Pieces playerTwoBoard[11][11]{};
 
 private:
     const short _boardHeight { 11 };
     const short _boardWidth { 11 };
-    Pieces playerOneBoard[11][11]{};
-    Pieces playerTwoBoard[11][11]{};
 };
 
 

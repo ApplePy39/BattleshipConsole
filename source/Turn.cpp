@@ -59,15 +59,55 @@ namespace TurnFunctionality
     // if time permits, I will add custom ship placement
     void chooseShipLocations()
     {
-        int playerOneSelectedPreset = 1;
+        int playerOneSelectedPreset { 1 };
+        int playerTwoSelectedPreset { 1 };
 
         std::cout << playerOneName << ", which preset would you like for your ships? (1-3)" << std::endl;
         std::cin >> playerOneSelectedPreset;
 
+        std::cout << "The chosen preset for " << playerOneName << " is:" << std::endl;
+
         if (playerOneSelectedPreset == 1)
+        {
+            readPresets::getPresetOne(playerOneBoard);
+        }
+
+        else if (playerOneSelectedPreset == 2)
+        {
+            readPresets::getPresetTwo();
+        }
+
+        else if (playerOneSelectedPreset == 3)
+        {
+            readPresets::getPresetThree();
+        }
+
+        std::cin.get();
+
+        system("cls");
+
+        std::cout << playerTwoName << ", which preset would you like for your ships? (1-3)" << std::endl;
+        std::cin >> playerTwoSelectedPreset;
+
+        std::cout << "The chosen preset for " << playerTwoName << " is:" << std::endl;
+
+        if (playerTwoSelectedPreset == 1)
         {
             readPresets::getPresetOne();
         }
+
+        else if (playerTwoSelectedPreset == 2)
+        {
+            readPresets::getPresetTwo();
+        }
+
+        else if (playerTwoSelectedPreset == 3)
+        {
+            readPresets::getPresetThree();
+        }
+
+        // Player one will be going first
+        playerOneTurn();
     }
 
 // Player one will have player two's board drawn, so they can guess where to hit next

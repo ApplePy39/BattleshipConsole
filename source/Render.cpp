@@ -70,9 +70,7 @@ namespace readPresets
     {
         std::fstream presetOneFile;
         presetOneFile.open("../source/saves/presetOne.txt", std::ios::in);
-      /*  presetOneFile.open("/saves/presetOne.txt", std::ios::in);
-        presetOneFile.open("BattleshipConsole/source/saves/presetOne.txt", std::ios::in);
-*/
+
         if (presetOneFile.is_open())
         {
             std::string currentLine;
@@ -90,6 +88,54 @@ namespace readPresets
         else
         {
             std::cout << "Unable to open file: (presetOne.txt)" << std::endl;
+        }
+    }
+    void getPresetTwo()
+    {
+        std::fstream presetTwoFile;
+        presetTwoFile.open("../source/saves/presetTwo.txt", std::ios::in);
+
+        if (presetTwoFile.is_open())
+        {
+            std::string currentLine;
+            std::cout << "here" << std::endl;
+            while (std::getline(presetTwoFile, currentLine))
+            {
+                std::cout << currentLine << std::endl;
+
+            }
+
+            presetTwoFile.close();
+            std::cin.get();
+        }
+
+        else
+        {
+            std::cout << "Unable to open file: (presetTwo.txt)" << std::endl;
+        }
+    }
+    void getPresetThree()
+    {
+        std::fstream presetThreeFile;
+        presetThreeFile.open("../source/saves/presetThree.txt", std::ios::in);
+
+        if (presetThreeFile.is_open())
+        {
+            std::string currentLine;
+            std::cout << "here" << std::endl;
+            while (std::getline(presetThreeFile, currentLine))
+            {
+                std::cout << currentLine << std::endl;
+
+            }
+
+            presetThreeFile.close();
+            std::cin.get();
+        }
+
+        else
+        {
+            std::cout << "Unable to open file: (presetThree.txt)" << std::endl;
         }
     }
 }
