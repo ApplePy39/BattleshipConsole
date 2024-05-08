@@ -20,25 +20,26 @@ void Render::StartGame()
     {
         for (int j = 0; j < 10; j++)
         {
-            playerOneBoard[i][j] = { '#', false };
-            playerTwoBoard[i][j] = { '#', false };
+            PlayerOneBoard[i][j] = { '#', false };
+            PlayerTwoBoard[i][j] = { '#', false };
         }
     }
-
     TurnFunctionality::beginGame();
 }
 
 void Render::renderPlayerOneBoard()
 {
+    std::cout << "render function\n";
     for (int i = 0; i < _boardWidth; i++)
     {
         for (int j = 0; j < _boardHeight; j++)
         {
-            std::cout << playerOneBoard[i][j].getCharacter();
+            std::cout << PlayerOneBoard[i][j].getCharacter();
         }
 
         std::cout << std::endl;
     }
+    std::cout << "render function";
 }
 
 void Render::renderPlayerTwoBoard()
@@ -47,7 +48,7 @@ void Render::renderPlayerTwoBoard()
     {
         for (int j = 0; j < _boardHeight; j++)
         {
-            std::cout << playerTwoBoard[i][j].getCharacter();
+            std::cout << PlayerTwoBoard[i][j].getCharacter();
         }
 
         std::cout << std::endl;
@@ -66,7 +67,7 @@ short Render::returnBoardWidth() const
 
 namespace readPresets
 {
-    void getPresetOne()
+    /*void getPresetOne(Pieces board[11][11])
     {
         std::fstream presetOneFile;
         presetOneFile.open("../source/saves/presetOne.txt", std::ios::in);
@@ -89,7 +90,54 @@ namespace readPresets
         {
             std::cout << "Unable to open file: (presetOne.txt)" << std::endl;
         }
+    }*/
+
+    void getPresetOne(Pieces board[11][11])
+    {
+        std::fstream presetOneFile;
+        presetOneFile.open("../source/saves/presetOne.txt", std::ios::in);
+
+
+        // It is always assigning the last chracter of the map to the whole board
+        // double for loop in a while loop is to blame I think
+        if (presetOneFile.is_open())
+        {
+/*            int widthCounter = 0;
+            int heightCounter = 0;*/
+            char currentChar;
+            std::cout << "here" << std::endl;
+            while (presetOneFile.get(currentChar))
+            {
+             /*   if (widthCounter < Render::_boardWidth && heightCounter < Render::_boardHeight)
+                {
+                    std::cout << currentChar << std::endl;
+                    PlayerOneBoard[widthCounter][heightCounter].setCharacter(currentChar);
+                    widthCounter++;
+                    heightCounter++;
+                }*/
+
+                for (int i = 0; i < Render::_boardHeight; i++)
+                {
+                    for (int j = 0; j < Render::_boardWidth; j++)
+                    {
+                        board[i][j].setCharacter(currentChar);
+                    }
+                }
+            }
+
+            std::cout << "character added: " << currentChar;
+            presetOneFile.close();
+
+            Render::renderPlayerOneBoard();
+            std::cin.get();
+        }
+
+        else
+        {
+            std::cout << "Unable to open file: (presetOne.txt)" << std::endl;
+        }
     }
+
     void getPresetTwo()
     {
         std::fstream presetTwoFile;

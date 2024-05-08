@@ -5,10 +5,6 @@
 #include "Turn.h"
 #include "Render.h"
 
-// endTurn() will end the current players turn and change the currentPlayerTurn counter
-// to either 1 or 0, the opposite of the current, it will call a redraw of the other players board
-// so the current player can guess where to hit.
-
 namespace TurnFunctionality
 {
     short currentPlayerTurn = 0;
@@ -69,7 +65,7 @@ namespace TurnFunctionality
 
         if (playerOneSelectedPreset == 1)
         {
-            readPresets::getPresetOne(playerOneBoard);
+            readPresets::getPresetOne(PlayerOneBoard);
         }
 
         else if (playerOneSelectedPreset == 2)
@@ -93,7 +89,7 @@ namespace TurnFunctionality
 
         if (playerTwoSelectedPreset == 1)
         {
-            readPresets::getPresetOne();
+            readPresets::getPresetOne(PlayerTwoBoard);
         }
 
         else if (playerTwoSelectedPreset == 2)
@@ -105,6 +101,7 @@ namespace TurnFunctionality
         {
             readPresets::getPresetThree();
         }
+
 
         // Player one will be going first
         playerOneTurn();

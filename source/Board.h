@@ -9,11 +9,12 @@ class Board
 {
 public:
     Board(Pieces board[11][11]);
+    Board(short boardWidth, short boardHeight);
     Board() = default;
     ~Board() = default;
 
 private:
-    const short _boardHeight { 11 };
-    const short _boardWidth { 11 };
+     short _boardHeight { 11 };
+     short _boardWidth { 11 };
 };
 
