@@ -26,3 +26,13 @@ void Pieces::setCharacter(char character)
 {
     this->_displayValue = character;
 }
+
+bool Pieces::getIsShip() const
+{
+    return this->_isShip;
+}
+
+void Pieces::setIsShip(bool value)
+{
+    this->_isShip = value;
+}

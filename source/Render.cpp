@@ -20,8 +20,11 @@ void Render::StartGame()
     {
         for (int j = 0; j < 10; j++)
         {
-            PlayerOneBoard[i][j] = { '#', false };
-            PlayerTwoBoard[i][j] = { '#', false };
+            TurnFunctionality::PlayerOneBoard[i][j] = { '#', false };
+            TurnFunctionality::PlayerTwoBoard[i][j] = { '#', false };
+
+            TurnFunctionality::PlayerOneBoardDisplay[i][j] = { '#', false };
+            TurnFunctionality::PlayerTwoBoardDisplay[i][j] = { '#', false };
         }
     }
     TurnFunctionality::beginGame();
@@ -29,17 +32,15 @@ void Render::StartGame()
 
 void Render::renderPlayerOneBoard()
 {
-    std::cout << "render function\n";
     for (int i = 0; i < _boardWidth; i++)
     {
         for (int j = 0; j < _boardHeight; j++)
         {
-            std::cout << PlayerOneBoard[i][j].getCharacter();
+            std::cout << TurnFunctionality::PlayerOneBoard[i][j].getCharacter();
         }
 
         std::cout << std::endl;
     }
-    std::cout << "render function";
 }
 
 void Render::renderPlayerTwoBoard()
@@ -48,7 +49,33 @@ void Render::renderPlayerTwoBoard()
     {
         for (int j = 0; j < _boardHeight; j++)
         {
-            std::cout << PlayerTwoBoard[i][j].getCharacter();
+            std::cout << TurnFunctionality::PlayerTwoBoard[i][j].getCharacter();
+        }
+
+        std::cout << std::endl;
+    }
+}
+
+void Render::renderPlayerOneDisplay()
+{
+    for (int i = 0; i < _boardWidth; i++)
+    {
+        for (int j = 0; j < _boardHeight; j++)
+        {
+            std::cout << TurnFunctionality::PlayerOneBoardDisplay[i][j].getCharacter();
+        }
+
+        std::cout << std::endl;
+    }
+}
+
+void Render::renderPlayerTwoDisplay()
+{
+    for (int i = 0; i < _boardWidth; i++)
+    {
+        for (int j = 0; j < _boardHeight; j++)
+        {
+            std::cout << TurnFunctionality::PlayerTwoBoardDisplay[i][j].getCharacter();
         }
 
         std::cout << std::endl;
@@ -67,68 +94,34 @@ short Render::returnBoardWidth() const
 
 namespace readPresets
 {
-    /*void getPresetOne(Pieces board[11][11])
-    {
-        std::fstream presetOneFile;
-        presetOneFile.open("../source/saves/presetOne.txt", std::ios::in);
-
-        if (presetOneFile.is_open())
-        {
-            std::string currentLine;
-            std::cout << "here" << std::endl;
-            while (std::getline(presetOneFile, currentLine))
-            {
-                std::cout << currentLine << std::endl;
-
-            }
-
-            presetOneFile.close();
-            std::cin.get();
-        }
-
-        else
-        {
-            std::cout << "Unable to open file: (presetOne.txt)" << std::endl;
-        }
-    }*/
-
+    // Something is wrong with where it copies the ships, not critical, will fix later
     void getPresetOne(Pieces board[11][11])
     {
         std::fstream presetOneFile;
         presetOneFile.open("../source/saves/presetOne.txt", std::ios::in);
 
-
-        // It is always assigning the last chracter of the map to the whole board
-        // double for loop in a while loop is to blame I think
         if (presetOneFile.is_open())
         {
-/*            int widthCounter = 0;
-            int heightCounter = 0;*/
+            int widthCounter = 0;
+            int heightCounter = 0;
             char currentChar;
-            std::cout << "here" << std::endl;
+
             while (presetOneFile.get(currentChar))
             {
-             /*   if (widthCounter < Render::_boardWidth && heightCounter < Render::_boardHeight)
-                {
+                if (widthCounter < Render::_boardWidth && heightCounter < Render::_boardHeight) {
                     std::cout << currentChar << std::endl;
-                    PlayerOneBoard[widthCounter][heightCounter].setCharacter(currentChar);
+                    board[widthCounter][heightCounter].setCharacter(currentChar);
                     widthCounter++;
-                    heightCounter++;
-                }*/
+                }
 
-                for (int i = 0; i < Render::_boardHeight; i++)
+                if (widthCounter == Render::_boardWidth)
                 {
-                    for (int j = 0; j < Render::_boardWidth; j++)
-                    {
-                        board[i][j].setCharacter(currentChar);
-                    }
+                    widthCounter = 0;
+                    heightCounter++;
                 }
             }
 
-            std::cout << "character added: " << currentChar;
             presetOneFile.close();
-
-            Render::renderPlayerOneBoard();
             std::cin.get();
         }
 
@@ -138,19 +131,30 @@ namespace readPresets
         }
     }
 
-    void getPresetTwo()
+    void getPresetTwo(Pieces board[11][11])
     {
         std::fstream presetTwoFile;
         presetTwoFile.open("../source/saves/presetTwo.txt", std::ios::in);
 
         if (presetTwoFile.is_open())
         {
-            std::string currentLine;
-            std::cout << "here" << std::endl;
-            while (std::getline(presetTwoFile, currentLine))
-            {
-                std::cout << currentLine << std::endl;
+            int widthCounter = 0;
+            int heightCounter = 0;
+            char currentChar;
 
+            while (presetTwoFile.get(currentChar))
+            {
+                if (widthCounter < Render::_boardWidth && heightCounter < Render::_boardHeight) {
+                    std::cout << currentChar << std::endl;
+                    board[widthCounter][heightCounter].setCharacter(currentChar);
+                    widthCounter++;
+                }
+
+                if (widthCounter == Render::_boardWidth)
+                {
+                    widthCounter = 0;
+                    heightCounter++;
+                }
             }
 
             presetTwoFile.close();
@@ -162,19 +166,30 @@ namespace readPresets
             std::cout << "Unable to open file: (presetTwo.txt)" << std::endl;
         }
     }
-    void getPresetThree()
+    void getPresetThree(Pieces board[11][11])
     {
         std::fstream presetThreeFile;
         presetThreeFile.open("../source/saves/presetThree.txt", std::ios::in);
 
         if (presetThreeFile.is_open())
         {
-            std::string currentLine;
-            std::cout << "here" << std::endl;
-            while (std::getline(presetThreeFile, currentLine))
-            {
-                std::cout << currentLine << std::endl;
+            int widthCounter = 0;
+            int heightCounter = 0;
+            char currentChar;
 
+            while (presetThreeFile.get(currentChar))
+            {
+                if (widthCounter < Render::_boardWidth && heightCounter < Render::_boardHeight) {
+                    std::cout << currentChar << std::endl;
+                    board[widthCounter][heightCounter].setCharacter(currentChar);
+                    widthCounter++;
+                }
+
+                if (widthCounter == Render::_boardWidth)
+                {
+                    widthCounter = 0;
+                    heightCounter++;
+                }
             }
 
             presetThreeFile.close();

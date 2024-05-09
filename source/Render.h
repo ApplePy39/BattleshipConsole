@@ -10,8 +10,8 @@
 namespace readPresets
 {
     extern void getPresetOne(Pieces board[11][11]);
-    extern void getPresetTwo();
-    extern void getPresetThree();
+    extern void getPresetTwo(Pieces board[11][11]);
+    extern void getPresetThree(Pieces board[11][11]);
 }
 
 class Render {
@@ -23,6 +23,10 @@ public:
     void StartGame();
     static void renderPlayerOneBoard();
     static void renderPlayerTwoBoard();
+
+    static void renderPlayerOneDisplay(); // Player two will see this
+    static void renderPlayerTwoDisplay(); // Player one will see this
+
     short returnBoardWidth() const;
     short returnBoardHeight() const;
     Pieces playerOneBoard[11][11]{};

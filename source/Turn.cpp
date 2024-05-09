@@ -11,6 +11,13 @@ namespace TurnFunctionality
     std::string playerOneName { " " };
     std::string playerTwoName { " " };
 
+    Pieces PlayerOneBoard[11][11]{};
+    Pieces PlayerTwoBoard[11][11]{};
+
+
+    Pieces PlayerOneBoardDisplay[11][11]{};
+    Pieces PlayerTwoBoardDisplay[11][11]{};
+
     void endTurn()
     {
         if (currentPlayerTurn == 0)
@@ -65,17 +72,20 @@ namespace TurnFunctionality
 
         if (playerOneSelectedPreset == 1)
         {
-            readPresets::getPresetOne(PlayerOneBoard);
+            readPresets::getPresetOne(TurnFunctionality::PlayerOneBoard);
+            Render::renderPlayerOneBoard();
         }
 
         else if (playerOneSelectedPreset == 2)
         {
-            readPresets::getPresetTwo();
+            readPresets::getPresetTwo(TurnFunctionality::PlayerOneBoard);
+            Render::renderPlayerOneBoard();
         }
 
         else if (playerOneSelectedPreset == 3)
         {
-            readPresets::getPresetThree();
+            readPresets::getPresetThree(TurnFunctionality::PlayerOneBoard);
+            Render::renderPlayerOneBoard();
         }
 
         std::cin.get();
@@ -89,17 +99,20 @@ namespace TurnFunctionality
 
         if (playerTwoSelectedPreset == 1)
         {
-            readPresets::getPresetOne(PlayerTwoBoard);
+            readPresets::getPresetOne(TurnFunctionality::PlayerTwoBoard);
+            Render::renderPlayerTwoBoard();
         }
 
         else if (playerTwoSelectedPreset == 2)
         {
-            readPresets::getPresetTwo();
+            readPresets::getPresetTwo(TurnFunctionality::PlayerTwoBoard);
+            Render::renderPlayerTwoBoard();
         }
 
         else if (playerTwoSelectedPreset == 3)
         {
-            readPresets::getPresetThree();
+            readPresets::getPresetThree(TurnFunctionality::PlayerTwoBoard);
+            Render::renderPlayerTwoBoard();
         }
 
 
@@ -107,10 +120,32 @@ namespace TurnFunctionality
         playerOneTurn();
     }
 
-// Player one will have player two's board drawn, so they can guess where to hit next
+    // Player one will have an empty player two's board drawn, so they can guess where to hit next
     void playerOneTurn()
     {
+        short xLoc;
+        short yLoc;
 
+        std::cout << playerOneName << "'s turn, enter the coordinates of where\nyou would like to hit" << std::endl;
+        Render::renderPlayerTwoDisplay();
+
+        std::cout << "X Location: ";
+        std::cin >> xLoc;
+
+        std::cout << "Y Location: ";
+        std::cin >> yLoc;
+
+        std::cout << "Location selected: (" << xLoc << ", " << yLoc << ")" << std::endl;
+
+        PlayerTwoBoard[xLoc][yLoc] = { 'x', true };
+
+        for (int i = 0; i < Render::_boardWidth; i++)
+        {
+            for (int j = 0; j < Render::_boardHeight; j++)
+            {
+
+            }
+        }
     }
 
     void playerTwoTurn()

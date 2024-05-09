@@ -14,7 +14,13 @@ namespace TurnFunctionality
     extern void playerOneTurn();
     extern void playerTwoTurn();
 
+    extern Pieces PlayerOneBoard[11][11];
+    extern Pieces PlayerTwoBoard[11][11];
+    extern Pieces PlayerOneBoardDisplay[11][11];
+    extern Pieces PlayerTwoBoardDisplay[11][11];
+
     extern short currentPlayerTurn;
+
     extern std::string playerOneName;
     extern std::string playerTwoName;
 }
