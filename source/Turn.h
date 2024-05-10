@@ -13,6 +13,7 @@ namespace TurnFunctionality
     extern void chooseShipLocations();
     extern void playerOneTurn();
     extern void playerTwoTurn();
+    extern void continueFunc();
 
     extern Pieces PlayerOneBoard[11][11];
     extern Pieces PlayerTwoBoard[11][11];

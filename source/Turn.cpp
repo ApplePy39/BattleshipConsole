@@ -18,6 +18,13 @@ namespace TurnFunctionality
     Pieces PlayerOneBoardDisplay[11][11]{};
     Pieces PlayerTwoBoardDisplay[11][11]{};
 
+    void continueFunc()
+    {
+        std::cout << "\nPress ENTER to continue...\n";
+        std::cin.get();
+        system("cls");
+    }
+
     void endTurn()
     {
         if (currentPlayerTurn == 0)
@@ -41,13 +48,14 @@ namespace TurnFunctionality
         std::cout << "Player 2 name: ";
         std::cin >> playerTwoName;
 
-        std::cout << "Current player's are " << playerOneName << " " << playerTwoName << std::endl;
+        std::cout << "Current player's are " << playerOneName << " and " << playerTwoName << std::endl;
         std::cout << "Is this correct? (y/N)" << std::endl;
 
         std::cin >> answer;
 
         if (answer == 'y')
         {
+            system("cls");
             chooseShipLocations();
         }
 
@@ -88,9 +96,7 @@ namespace TurnFunctionality
             Render::renderPlayerOneBoard();
         }
 
-        std::cin.get();
-
-        system("cls");
+        continueFunc();
 
         std::cout << playerTwoName << ", which preset would you like for your ships? (1-3)" << std::endl;
         std::cin >> playerTwoSelectedPreset;
@@ -115,7 +121,7 @@ namespace TurnFunctionality
             Render::renderPlayerTwoBoard();
         }
 
-
+        continueFunc();
         // Player one will be going first
         playerOneTurn();
     }
@@ -126,7 +132,7 @@ namespace TurnFunctionality
         short xLoc;
         short yLoc;
 
-        std::cout << playerOneName << "'s turn, enter the coordinates of where\nyou would like to hit" << std::endl;
+        std::cout << playerOneName << "'s turn, enter the coordinates of where you would like to hit" << std::endl;
         Render::renderPlayerTwoDisplay();
 
         std::cout << "X Location: ";
@@ -136,20 +142,64 @@ namespace TurnFunctionality
         std::cin >> yLoc;
 
         std::cout << "Location selected: (" << xLoc << ", " << yLoc << ")" << std::endl;
+        Render::renderPlayerTwoBoard();
 
-        PlayerTwoBoard[xLoc][yLoc] = { 'x', true };
-
-        for (int i = 0; i < Render::_boardWidth; i++)
+        if (PlayerTwoBoard[yLoc][xLoc].getIsShip()) // if ship is hit
         {
-            for (int j = 0; j < Render::_boardHeight; j++)
-            {
-
-            }
+            PlayerTwoBoard[yLoc][xLoc] = { 'x', true };
+            PlayerTwoBoardDisplay[yLoc][xLoc] = { 'x', true };
+            std::cout << "Ship hit at " << yLoc << ", " << xLoc << std::endl;
         }
+        else
+        {
+            PlayerTwoBoard[yLoc][xLoc] = { '~', false };
+            PlayerTwoBoardDisplay[yLoc][xLoc] = { '~', false };
+            std::cout << "Failed to hit any target" << std::endl;
+        }
+
+        Render::renderPlayerTwoDisplay();
+
+        std::cin.get();
+        continueFunc();
+        playerTwoTurn();
     }
+
+    // Colour some console text next to make it stand out
 
     void playerTwoTurn()
     {
+        short xLoc;
+        short yLoc;
 
+        std::cout << playerTwoName << "'s turn, enter the coordinates of where you would like to hit" << std::endl;
+        Render::renderPlayerOneDisplay();
+
+        std::cout << "X Location: ";
+        std::cin >> xLoc;
+
+        std::cout << "Y Location: ";
+        std::cin >> yLoc;
+
+        std::cout << "Location selected: (" << xLoc << ", " << yLoc << ")" << std::endl;
+        Render::renderPlayerOneBoard();
+
+        if (PlayerOneBoard[yLoc][xLoc].getIsShip()) // if ship is hit
+        {
+            PlayerOneBoard[yLoc][xLoc] = { 'x', true };
+            PlayerOneBoardDisplay[yLoc][xLoc] = { 'x', true };
+            std::cout << "Ship hit at " << yLoc << ", " << xLoc << std::endl;
+        }
+        else
+        {
+            PlayerOneBoard[yLoc][xLoc] = { '~', false };
+            PlayerOneBoardDisplay[yLoc][xLoc] = { '~', false };
+            std::cout << "Failed to hit any target" << std::endl;
+        }
+
+        Render::renderPlayerOneDisplay();
+
+        std::cin.get();
+        continueFunc();
+        playerOneTurn();
     }
 }

@@ -16,9 +16,9 @@ Render::Render(short boardWidth, short boardHeight, Pieces board[11][11])
 
 void Render::StartGame()
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 11; i++)
     {
-        for (int j = 0; j < 10; j++)
+        for (int j = 0; j < 11; j++)
         {
             TurnFunctionality::PlayerOneBoard[i][j] = { '#', false };
             TurnFunctionality::PlayerTwoBoard[i][j] = { '#', false };
@@ -80,6 +80,7 @@ void Render::renderPlayerTwoDisplay()
 
         std::cout << std::endl;
     }
+
 }
 
 short Render::returnBoardHeight() const
@@ -109,7 +110,11 @@ namespace readPresets
             while (presetOneFile.get(currentChar))
             {
                 if (widthCounter < Render::_boardWidth && heightCounter < Render::_boardHeight) {
-                    std::cout << currentChar << std::endl;
+                    if (currentChar == 's')
+                    {
+                        board[widthCounter][heightCounter].setIsShip(true);
+                    }
+
                     board[widthCounter][heightCounter].setCharacter(currentChar);
                     widthCounter++;
                 }
@@ -145,7 +150,6 @@ namespace readPresets
             while (presetTwoFile.get(currentChar))
             {
                 if (widthCounter < Render::_boardWidth && heightCounter < Render::_boardHeight) {
-                    std::cout << currentChar << std::endl;
                     board[widthCounter][heightCounter].setCharacter(currentChar);
                     widthCounter++;
                 }
@@ -180,7 +184,6 @@ namespace readPresets
             while (presetThreeFile.get(currentChar))
             {
                 if (widthCounter < Render::_boardWidth && heightCounter < Render::_boardHeight) {
-                    std::cout << currentChar << std::endl;
                     board[widthCounter][heightCounter].setCharacter(currentChar);
                     widthCounter++;
                 }

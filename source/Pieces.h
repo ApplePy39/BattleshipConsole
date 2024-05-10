@@ -10,7 +10,6 @@ class Pieces {
 public:
     Pieces() = default;
     ~Pieces() = default;
-    Pieces(char displayVal, bool)
     Pieces(char displayVal, bool isShip);
     Pieces(char displayVal, bool isShip, short sizeOfShip, char arrangement, std::vector<Coordinates> locations);
 
