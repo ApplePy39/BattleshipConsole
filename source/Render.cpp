@@ -150,6 +150,10 @@ namespace readPresets
             while (presetTwoFile.get(currentChar))
             {
                 if (widthCounter < Render::_boardWidth && heightCounter < Render::_boardHeight) {
+                    if (currentChar == 's')
+                    {
+                        board[widthCounter][heightCounter].setIsShip(true);
+                    }
                     board[widthCounter][heightCounter].setCharacter(currentChar);
                     widthCounter++;
                 }
@@ -170,6 +174,7 @@ namespace readPresets
             std::cout << "Unable to open file: (presetTwo.txt)" << std::endl;
         }
     }
+
     void getPresetThree(Pieces board[11][11])
     {
         std::fstream presetThreeFile;
@@ -184,6 +189,10 @@ namespace readPresets
             while (presetThreeFile.get(currentChar))
             {
                 if (widthCounter < Render::_boardWidth && heightCounter < Render::_boardHeight) {
+                    if (currentChar == 's')
+                    {
+                        board[widthCounter][heightCounter].setIsShip(true);
+                    }
                     board[widthCounter][heightCounter].setCharacter(currentChar);
                     widthCounter++;
                 }

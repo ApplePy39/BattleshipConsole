@@ -522,30 +522,6 @@ BattleshipClone/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BattleshipClone.dir\build.make CMakeFiles/BattleshipClone.dir/build
 .PHONY : BattleshipClone/fast
 
-source/Board.obj: source/Board.cpp.obj
-.PHONY : source/Board.obj
-
-# target to build an object file
-source/Board.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BattleshipClone.dir\build.make CMakeFiles/BattleshipClone.dir/source/Board.cpp.obj
-.PHONY : source/Board.cpp.obj
-
-source/Board.i: source/Board.cpp.i
-.PHONY : source/Board.i
-
-# target to preprocess a source file
-source/Board.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BattleshipClone.dir\build.make CMakeFiles/BattleshipClone.dir/source/Board.cpp.i
-.PHONY : source/Board.cpp.i
-
-source/Board.s: source/Board.cpp.s
-.PHONY : source/Board.s
-
-# target to generate assembly for a file
-source/Board.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BattleshipClone.dir\build.make CMakeFiles/BattleshipClone.dir/source/Board.cpp.s
-.PHONY : source/Board.cpp.s
-
 source/Coordinates.obj: source/Coordinates.cpp.obj
 .PHONY : source/Coordinates.obj
 
@@ -706,9 +682,6 @@ help:
 	@echo ... NightlyTest
 	@echo ... NightlyUpdate
 	@echo ... BattleshipClone
-	@echo ... source/Board.obj
-	@echo ... source/Board.i
-	@echo ... source/Board.s
 	@echo ... source/Coordinates.obj
 	@echo ... source/Coordinates.i
 	@echo ... source/Coordinates.s

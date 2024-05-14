@@ -142,12 +142,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/ohmcss/Desktop/BattleshipConsole/source/Board.cpp">
-			<Option target="BattleshipClone"/>
-		</Unit>
-		<Unit filename="C:/Users/ohmcss/Desktop/BattleshipConsole/source/Board.h">
-			<Option target="BattleshipClone"/>
-		</Unit>
 		<Unit filename="C:/Users/ohmcss/Desktop/BattleshipConsole/source/Coordinates.cpp">
 			<Option target="BattleshipClone"/>
 		</Unit>

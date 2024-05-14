@@ -4,25 +4,35 @@
 
 #include "Turn.h"
 #include "Render.h"
+#include <windows.h>
 
 namespace TurnFunctionality
 {
+    // Colour some console text next to make it stand out (Windows only)
+    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
     short currentPlayerTurn = 0;
     std::string playerOneName { " " };
     std::string playerTwoName { " " };
 
+    static int shipCounterPlayerOne { 13 };
+    static int shipCounterPlayerTwo { 13 };
+
     Pieces PlayerOneBoard[11][11]{};
     Pieces PlayerTwoBoard[11][11]{};
-
 
     Pieces PlayerOneBoardDisplay[11][11]{};
     Pieces PlayerTwoBoardDisplay[11][11]{};
 
+    // Simple continue function to make it visually more appealing
     void continueFunc()
     {
+        SetConsoleTextAttribute(h, 11);
+        std::cout << "Player One ship count: " << shipCounterPlayerOne << std::endl;
+        std::cout << "Player Two ship count: " << shipCounterPlayerTwo << std::endl;
         std::cout << "\nPress ENTER to continue...\n";
         std::cin.get();
         system("cls");
+        SetConsoleTextAttribute(h, 15);
     }
 
     void endTurn()
@@ -37,7 +47,7 @@ namespace TurnFunctionality
         }
     }
 
-// beginGame() will get the players names as well as their ship layout
+    // beginGame() will get the players names as well as their ship layout
     void beginGame()
     {
         char answer;
@@ -81,6 +91,7 @@ namespace TurnFunctionality
         if (playerOneSelectedPreset == 1)
         {
             readPresets::getPresetOne(TurnFunctionality::PlayerOneBoard);
+            std::cout << "Ship counter turn.cpp: " << shipCounterPlayerOne << std::endl;
             Render::renderPlayerOneBoard();
         }
 
@@ -133,7 +144,9 @@ namespace TurnFunctionality
         short yLoc;
 
         std::cout << playerOneName << "'s turn, enter the coordinates of where you would like to hit" << std::endl;
+        SetConsoleTextAttribute(h, 11);
         Render::renderPlayerTwoDisplay();
+        SetConsoleTextAttribute(h, 15);
 
         std::cout << "X Location: ";
         std::cin >> xLoc;
@@ -142,29 +155,40 @@ namespace TurnFunctionality
         std::cin >> yLoc;
 
         std::cout << "Location selected: (" << xLoc << ", " << yLoc << ")" << std::endl;
-        Render::renderPlayerTwoBoard();
 
         if (PlayerTwoBoard[yLoc][xLoc].getIsShip()) // if ship is hit
         {
             PlayerTwoBoard[yLoc][xLoc] = { 'x', true };
             PlayerTwoBoardDisplay[yLoc][xLoc] = { 'x', true };
-            std::cout << "Ship hit at " << yLoc << ", " << xLoc << std::endl;
+            SetConsoleTextAttribute(h, 10);
+            std::cout << "Ship hit at " << xLoc << ", " << yLoc << std::endl;
+            shipCounterPlayerTwo--;
+            SetConsoleTextAttribute(h, 15);
         }
         else
         {
             PlayerTwoBoard[yLoc][xLoc] = { '~', false };
             PlayerTwoBoardDisplay[yLoc][xLoc] = { '~', false };
+            SetConsoleTextAttribute(h, 12);
             std::cout << "Failed to hit any target" << std::endl;
+            SetConsoleTextAttribute(h, 15);
         }
 
+        SetConsoleTextAttribute(h, 11);
         Render::renderPlayerTwoDisplay();
+        SetConsoleTextAttribute(h, 15);
+
+        if (shipCounterPlayerTwo == 0)
+        {
+            SetConsoleTextAttribute(h, 11);
+            std::cout << playerOneName << " has won with " << shipCounterPlayerOne << "ships left!" << std::endl;
+            SetConsoleTextAttribute(h, 15);
+        }
 
         std::cin.get();
         continueFunc();
         playerTwoTurn();
     }
-
-    // Colour some console text next to make it stand out
 
     void playerTwoTurn()
     {
@@ -172,7 +196,9 @@ namespace TurnFunctionality
         short yLoc;
 
         std::cout << playerTwoName << "'s turn, enter the coordinates of where you would like to hit" << std::endl;
+        SetConsoleTextAttribute(h, 11);
         Render::renderPlayerOneDisplay();
+        SetConsoleTextAttribute(h, 15);
 
         std::cout << "X Location: ";
         std::cin >> xLoc;
@@ -180,23 +206,37 @@ namespace TurnFunctionality
         std::cout << "Y Location: ";
         std::cin >> yLoc;
 
-        std::cout << "Location selected: (" << xLoc << ", " << yLoc << ")" << std::endl;
-        Render::renderPlayerOneBoard();
+        std::cout << "Location selected: (" << xLoc << ", " << yLoc << ")\n" << std::endl;
 
         if (PlayerOneBoard[yLoc][xLoc].getIsShip()) // if ship is hit
         {
             PlayerOneBoard[yLoc][xLoc] = { 'x', true };
             PlayerOneBoardDisplay[yLoc][xLoc] = { 'x', true };
-            std::cout << "Ship hit at " << yLoc << ", " << xLoc << std::endl;
+            SetConsoleTextAttribute(h, 10);
+            std::cout << "Ship hit at " << xLoc << ", " << yLoc << std::endl;
+            shipCounterPlayerOne--;
+            SetConsoleTextAttribute(h, 15);
         }
         else
         {
             PlayerOneBoard[yLoc][xLoc] = { '~', false };
             PlayerOneBoardDisplay[yLoc][xLoc] = { '~', false };
+            SetConsoleTextAttribute(h, 12);
             std::cout << "Failed to hit any target" << std::endl;
+            SetConsoleTextAttribute(h, 15);
         }
 
+        SetConsoleTextAttribute(h, 11);
         Render::renderPlayerOneDisplay();
+        SetConsoleTextAttribute(h, 15);
+
+        if (shipCounterPlayerOne == 0)
+        {
+            SetConsoleTextAttribute(h, 11);
+            std::cout << playerTwoName << " has won with " << shipCounterPlayerTwo << "ships left!" << std::endl;
+            SetConsoleTextAttribute(h, 15);
+        }
+
 
         std::cin.get();
         continueFunc();

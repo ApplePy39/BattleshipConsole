@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/ohmcss/Desktop/BattleshipConsole/source/Board.cpp" "CMakeFiles/BattleshipClone.dir/source/Board.cpp.obj" "gcc" "CMakeFiles/BattleshipClone.dir/source/Board.cpp.obj.d"
   "C:/Users/ohmcss/Desktop/BattleshipConsole/source/Coordinates.cpp" "CMakeFiles/BattleshipClone.dir/source/Coordinates.cpp.obj" "gcc" "CMakeFiles/BattleshipClone.dir/source/Coordinates.cpp.obj.d"
   "C:/Users/ohmcss/Desktop/BattleshipConsole/source/Pieces.cpp" "CMakeFiles/BattleshipClone.dir/source/Pieces.cpp.obj" "gcc" "CMakeFiles/BattleshipClone.dir/source/Pieces.cpp.obj.d"
   "C:/Users/ohmcss/Desktop/BattleshipConsole/source/Render.cpp" "CMakeFiles/BattleshipClone.dir/source/Render.cpp.obj" "gcc" "CMakeFiles/BattleshipClone.dir/source/Render.cpp.obj.d"

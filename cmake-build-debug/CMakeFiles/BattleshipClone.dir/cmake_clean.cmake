@@ -2,8 +2,6 @@ file(REMOVE_RECURSE
   "BattleshipClone.exe"
   "BattleshipClone.exe.manifest"
   "BattleshipClone.pdb"
-  "CMakeFiles/BattleshipClone.dir/source/Board.cpp.obj"
-  "CMakeFiles/BattleshipClone.dir/source/Board.cpp.obj.d"
   "CMakeFiles/BattleshipClone.dir/source/Coordinates.cpp.obj"
   "CMakeFiles/BattleshipClone.dir/source/Coordinates.cpp.obj.d"
   "CMakeFiles/BattleshipClone.dir/source/Pieces.cpp.obj"
